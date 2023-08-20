@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'theme_state.dart';
 
@@ -10,8 +10,6 @@ class ThemeCubit extends Cubit<ThemeState> {
 
   void changeTheme() {
     _isDark = !_isDark;
-
-    // Emit will change the state of our theme (Must use)
     emit(ThemeChanged(isDark: _isDark));
   }
 }

@@ -22,12 +22,12 @@ class _IndexState extends State<Index> {
   };
 
   getLocation() async {
-    setState(() {
-      loading = true;
-    });
     LocationPermission permission;
     permission = await Geolocator.requestPermission();
     if (permission != LocationPermission.deniedForever && permission != LocationPermission.denied) {
+      setState(() {
+        loading = true;
+      });
       Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
       BaseOptions options = BaseOptions(
         receiveDataWhenStatusError: true,
@@ -96,7 +96,7 @@ class _IndexState extends State<Index> {
       children: [
         Scaffold(
           appBar: AppBar(
-            title: const Text('Weather & Counter'),
+            title: const Text('Погода и счетчик'),
             centerTitle: true,
           ),
           body: Column(

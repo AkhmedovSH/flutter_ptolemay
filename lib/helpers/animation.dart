@@ -20,7 +20,7 @@ class DarkTransition extends StatefulWidget {
   final Duration? duration;
 
   @override
-  _DarkTransitionState createState() => _DarkTransitionState();
+  State<DarkTransition> createState() => _DarkTransitionState();
 }
 
 class _DarkTransitionState extends State<DarkTransition> with SingleTickerProviderStateMixin {
@@ -51,7 +51,6 @@ class _DarkTransitionState extends State<DarkTransition> with SingleTickerProvid
   double x = 0;
   double y = 0;
   bool isDark = false;
-  // bool isBottomThemeDark = true;
   bool isDarkVisible = false;
   late double radius;
   Offset position = Offset.zero;

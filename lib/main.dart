@@ -26,13 +26,8 @@ class MyApp extends StatelessWidget {
     // позиция начала анимации
     final circleOffset = Offset(20, size.height - 20);
     ThemeCubit theme = BlocProvider.of<ThemeCubit>(context, listen: true);
-
     return MaterialApp(
-      locale: const Locale('ru_RU'),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       initialRoute: '/',
       routes: {
         '/': (context) => DarkTransition(
